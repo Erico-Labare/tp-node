@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const Product = require("./productModel");
 const router = require("./routeur");
 const { notFoundHandler, errorHandler } = require("./middleware");
 

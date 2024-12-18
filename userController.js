@@ -1,5 +1,6 @@
-const Users = require("./model");
+const Users = require("./userModel");
 const { validateUserData } = require("./middleware");
+
 
 // GET recherche all
 const getAllUsers = (req, res) => {
