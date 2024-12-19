@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des utilisateurs</title>
+</head>
+<body>
+  <h1>Liste des utilisateurs</h1>
+  <a href="/users/create">Créer un utilisateur</a>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Âge</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.age %></td>
+          <td>
+            <a href="/users/<%= user.id %>">Voir</a>
+            <a href="/users/<%= user.id %>/edit">Modifier</a>
+            <form action="/users/<%= user.id %>/destroy" method="post" style="display:inline;">
+              <button type="submit">Supprimer</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modifier un utilisateur</title>
+</head>
+<body>
+  <h1>Modifier l'utilisateur</h1>
+  <form action="/users/<%= user.id %>/update" method="post">
+    <label for="name">Nom</label>
+    <input type="text" name="name" id="name" value="<%= user.name %>" required>
+    <label for="age">Âge</label>
+    <input type="number" name="age" id="age" value="<%= user.age %>" required>
+    <button type="submit">Mettre à jour</button>
+  </form>
+</body>
+</html>

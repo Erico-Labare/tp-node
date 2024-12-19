@@ -1,0 +1,32 @@
+<% layout('layout') %>
+<h2>Liste des produits</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Quantité</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(product => { %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.price %></td>
+        <td>
+          <a href="/products/<%= product.id %>">Voir</a>
+          <a href="/products/<%= product.id %>/edit">Modifier</a>
+          <form action="/products/<%= product.id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Supprimer</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
