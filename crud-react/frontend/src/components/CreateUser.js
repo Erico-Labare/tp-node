@@ -16,7 +16,7 @@ function CreateUser() {
 
   return (
     <div>
-      <h1>Create User</h1>
+      <h1>Créer un User</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
